@@ -14,6 +14,10 @@ def division(a, b):
     c = a / b
     return c
 
+def square(a, b):
+    c = a**2
+    return c
+
 
 
 class Calculator:
