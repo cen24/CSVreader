@@ -18,6 +18,9 @@ def square(a, b):
     c = a**2
     return c
 
+def squareroot(a, b):
+    c = a**(1/2)
+    return c
 
 
 class Calculator:
