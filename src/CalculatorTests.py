@@ -24,10 +24,6 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.calculator.division(3, 3), 1)
         self.assertEqual(self.calculator.result, 1)
 
-    def test_division(self):
-        self.assertEqual(self.calculator.division(3, 3), 1)
-        self.assertEqual(self.calculator.result, 1)
-
     def test_square(self):
         self.assertEqual(self.calculator.square(9), 81)
         self.assertEqual(self.calculator.result, 81)
