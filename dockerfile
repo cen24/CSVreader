@@ -1,5 +1,3 @@
-#Docker configuration
-
 FROM python:3
 
 ADD src /src
