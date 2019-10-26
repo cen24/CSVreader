@@ -20,7 +20,7 @@ def square(a):
     c = a * a
     return c
 
-def squareRoot(a):
+def sqrt(a):
     math.sqrt(a)
     return c
 
