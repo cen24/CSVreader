@@ -21,7 +21,7 @@ def square(a):
     return c
 
 def sqrt(a):
-    math.sqrt(a)
+    c = math.sqrt(a)
     return c
 
 class calculator:
@@ -30,24 +30,25 @@ class calculator:
     def __init__(self):
         pass
 
-    def add(self, a, b):
+    def addition(self, a, b):
         self.result = add(a, b)
-        return  self.result
+        return self.result
 
-    def sub(self, a, b):
+    def subtraction(self, a, b):
         self.result = sub(a, b)
-        return  self.result
+        return self.result
 
-    def times(self, a, b):
+    def multiply(self, a, b):
         self.result = times(a, b)
-        return  self.result
+        return self.result
 
-    def div(self, a, b):
+    def division(self, a, b):
         self.result = div(a, b)
         return self.result
 
-    def square(self, a):
+    def square_(self, a):
         self.result = square(a)
 
-    def sqrt(self, a):
-        self.result = math.sqrt(a)
+    def sqrt_(self, a):
+        self.result = sqrt(a)
+        return self.result
