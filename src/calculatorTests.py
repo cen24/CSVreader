@@ -1,5 +1,6 @@
 import unittest
 from calculator import calculator
+from csvreader import csvreader
 
 
 class MyTestCase(unittest.TestCase):
@@ -9,32 +10,51 @@ class MyTestCase(unittest.TestCase):
     def test_instantiate_calculator(self):
         self.assertIsInstance(self.calculator, calculator)
 
-    def test_add(self):
-        self.calculator.addition(3, 3)
-        self.assertEqual(self.calculator.result, 6)
+    def test_addition(self):
+        test_data = csvreader('csv/UnitTestAddition.csv').data
+        for row in test_data:
+            result = float(row['Result'])
+            self.assertEqual(self.calculator.addition(row['Value 1'], row['Value 2']), result)
+            self.assertEqual(self.calculator.result, result)
 
-    def test_sub(self):
-        self.calculator.subtraction(3, 3)
-        self.assertEqual(self.calculator.result, 0)
+    def test_subtraction(self):
+        test_data = csvreader('csv/UnitTestSubtraction.csv').data
+        for row in test_data:
+            result = float(row['Result'])
+            self.assertEqual(self.calculator.subtraction(row['Value 1'], row['Value 2']), result)
+            self.assertEqual(self.calculator.result,result)
 
     def test_times(self):
-        self.calculator.multiply(3, 3)
-        self.assertEqual(self.calculator.result, 9)
+        test_data = csvreader('csv/UnitTestMultiplication.csv').data
+        for row in test_data:
+            result = float(row['Result'])
+            self.assertEqual(self.calculator.multiply(row['Value 1'], row['Value 2']), result)
+            self.assertEqual(self.calculator.result, result)
 
     def test_div(self):
-        self.calculator.division(3, 3)
-        self.assertEqual(self.calculator.result, 1)
+        test_data = csvreader('csv/UnitTestDivision.csv').data
+        for row in test_data:
+            result = float(row['Result'])
+            self.assertAlmostEqual(self.calculator.division(row['Value 1'], row['Value 2']), result)
+            self.assertAlmostEqual(self.calculator.result, result)
 
     def test_square(self):
-        self.calculator.square_(9)
-        self.assertEqual(self.calculator.result, 81)
+        test_data = csvreader('csv/UnitTestSquare.csv').data
+        for row in test_data:
+            result = float(row['Result'])
+            self.assertEqual(self.calculator.square_(row['Value 1']), result)
+            self.assertEqual(self.calculator.result, result)
 
     def test_sqrt(self):
-        self.calculator.sqrt_(81)
-        self.assertEqual(self.calculator.result, 9)
+        test_data = csvreader('csv/UnitTestSquareRoot.csv').data
+        for row in test_data:
+            result = float(row['Result'])
+            self.assertAlmostEqual(self.calculator.sqrt_(row['Value 1']), result)
+            self.assertAlmostEqual(self.calculator.result, result)
 
     def test_results_property(self):
         self.assertEqual(self.calculator.result, 0)
 
 if __name__ == '__main__':
     unittest.main()
+
